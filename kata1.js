@@ -1,4 +1,4 @@
-// 
+
 
 const sumLargestNumbers = function(arr) {
   let largest = 0;
@@ -6,10 +6,10 @@ const sumLargestNumbers = function(arr) {
 
 for(let i = 0; i < arr.length; i++) {
   if(arr[i] > largest) {
-    secondLargest = largest;
-    largest = arr[i];
-  } else if (arr[i] > secondLargest && arr[i] != largest) {
-    secondLargest = arr[i];
+    secondLargest = largest; //largest is tracked as 2nd largest so value doesn't get lost and can be used in else if
+    largest = arr[i]; // largest takes value of highest number
+  } else if (arr[i] >= secondLargest && arr[i] != largest) {
+    secondLargest = arr[i]; 
   }
 }
   
