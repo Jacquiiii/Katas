@@ -1,5 +1,3 @@
-
-
 const sumLargestNumbers = function(arr) {
   let largest = 0;
   let secondLargest = 0;
