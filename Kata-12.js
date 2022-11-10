@@ -83,3 +83,69 @@ recipes = [
 ];
 
 console.log(chooseRecipe(bakeryA, bakeryB, recipes));
+
+
+
+/*
+
+Alternative methods:
+
+const chooseRecipe = function(bakeryA, bakeryB, recipes) {
+  let winningRecipe = "";
+  let firstIngredient;
+  let secondIngredient;
+  
+  ingredientCheck = recipes.findIndex(function(obj, items) { 
+    firstIngredient = obj.ingredients[0];
+    secondIngredient = obj.ingredients[1];
+    //console.log("receipe '" + obj.name + "' requires: " + firstIngredient + " and " + secondIngredient);
+   
+    for (ingredientA of bakeryA) {
+      if (ingredientA === firstIngredient || ingredientA === secondIngredient){
+        for (ingredientB of bakeryB) {
+          if (ingredientB === firstIngredient || ingredientB === secondIngredient){
+            winningRecipe += obj.name;
+          }
+        }
+      } 
+    } 
+    }); 
+    
+  return winningRecipe;
+
+}
+
+
+or 
+
+
+const chooseRecipe = (bakeryA, bakeryB, recipes) => {
+  let arr1 = []; let arr2 = []; 
+
+  let findIngr = (recipeBook,baker,possible) => {
+    for (let recipe of recipeBook) {
+      for (let x = 0; x <= recipe.ingredients.length; x++) {
+        for (inventory of baker) {
+          if (inventory === recipe.ingredients[x]) {
+             possible.push(recipe.name);
+          }
+        }
+      }
+    }
+  };
+
+  findIngr(recipes,bakeryA,arr1);
+  findIngr(recipes,bakeryB,arr2);
+
+  let makeThis = (bakerA,bakerB) => {
+    for (let x of bakerA) {
+      for (let y of bakerB) {
+        if (x === y) {return x;}        
+      }
+    }
+  };
+
+  return makeThis(arr1,arr2); 
+}
+
+*/
