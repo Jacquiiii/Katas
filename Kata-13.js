@@ -1,7 +1,7 @@
 // plan: 
 // create object for year, month, date
 // write switch statement to convert month number to written number
-// figure out how to add nd or th depending on the day
+// write if/else statement to convert day to number so no leading zeros and to add th, nd, rd, st depending on the day
 // write console log statement calling key values and using concatenation with comma
 
 
