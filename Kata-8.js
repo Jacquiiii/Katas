@@ -21,9 +21,49 @@ console.log(repeatNumbers([[10, 4], [34, 6], [92, 2], [1, 10], [1, 10]]));
 
 
 
-/* 
 
-Alternate solution:
+/*
+
+could also write an if... statement and only add a comma if more strings will follow: 
+if ((i + 1) < data.length) output += ', ';
+
+or 
+
+placed in between first and second for loop: 
+    if (string != '') string += ",";  
+
+------------------------------------------------------
+Alternate solutions:
+
+const repeatNumbers = function(data) {
+  let str = "";
+  for (let i = 0; i < data.length; i++) {
+    (str !== "") ? str += ", " : str;
+    for (let j = 0; j < data[i][1]; j++) {
+      str += data[i][0]
+    }
+  }
+  return str;
+}
+
+or
+
+const repeatNumbers = (numbers) => {
+  result = "";
+
+  for (let i = 0; i < numbers.length; i++) {
+    let j = 0;
+    while (j < numbers[i][1]) {
+      result += numbers[i][0];
+      j++;
+    }
+    if (numbers.length > 1 && i < numbers.length-1)
+    result += ", ";
+  }
+  return result;
+};
+
+or 
 
 const repeatNumbers = data => {
   let temp = ""; let result =""; //Placeholders to store loop and result data
